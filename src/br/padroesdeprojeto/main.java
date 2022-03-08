@@ -1,9 +1,10 @@
 package br.padroesdeprojeto;
+import br.padroesdeprojeto.facade.Facade;
 import br.padroesdeprojeto.singleton.*;
 import br.padroesdeprojeto.strategy.*;
 
 
-public class Test {
+public class main {
     public static void main(String[] args) {
 
         System.out.println("Lazy");
@@ -39,5 +40,9 @@ public class Test {
         robo.mover();
         robo.setComportamento(defensivo);
         robo.mover();
+
+        System.out.println("\nFacade");
+        Facade facade = new Facade();
+        facade.migrarCliente("Weslley", "73800-123");
     }
 }
