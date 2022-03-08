@@ -1,5 +1,6 @@
 package br.padroesdeprojeto;
 import br.padroesdeprojeto.singleton.*;
+import br.padroesdeprojeto.strategy.*;
 
 
 public class Test {
@@ -22,5 +23,21 @@ public class Test {
         System.out.println(holder);
         holder = SingletonLazyHolder.getInstancia();
         System.out.println(holder);
+
+        //Strategy
+
+        IComportamento defensivo = new ComportamentoDefensivo();
+        IComportamento normal = new ComportamentoNormal();
+        IComportamento agressivo = new ComportamentoAgressivo();
+
+        System.out.println("\nStrategy");
+        Robo robo = new Robo();
+        robo.setComportamento(normal);
+        robo.mover();
+        robo.mover();
+        robo.setComportamento(agressivo);
+        robo.mover();
+        robo.setComportamento(defensivo);
+        robo.mover();
     }
 }
